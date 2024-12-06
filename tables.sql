@@ -26,3 +26,12 @@ INSERT INTO products (name, description, price) VALUES
 ('Action Camera', 'Compact action camera with 4K recording and waterproof casing.', 299.00),
 ('Fitness Tracker', 'Wearable fitness tracker with heart rate monitoring.', 49.99),
 ('Drone', 'High-performance drone with 4K camera and long flight time.', 599.99);
+
+CREATE TABLE recently_viewed (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    product_id INT NOT NULL,
+    viewed_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (product_id) REFERENCES products(id) ON DELETE CASCADE ON UPDATE CASCADE
+);

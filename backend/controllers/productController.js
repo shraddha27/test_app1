@@ -1,7 +1,8 @@
 const db = require('../config/db');
 
 const logProductView = async (req, res) => {
-    const userId = req.user.id;
+  console.log(req.user);
+    const userId = req.user.userId;
     const productId = req.params.productId;
 
     try {
@@ -13,7 +14,7 @@ const logProductView = async (req, res) => {
 
         res.status(201).json({ message: 'Product view logged' });
     } catch (err) {
-        res.status(500).json({ error: 'Failed to log product view' });
+        res.status(500).json({ error: 'Failed to log product view'+err });
     }
 };
 

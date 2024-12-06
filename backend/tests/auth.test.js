@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../app'); // Import the Express app
+const app = require('../app'); 
 
 describe('Authentication Endpoints', () => {
     it('should register a user', async () => {

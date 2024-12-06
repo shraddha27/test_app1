@@ -3,7 +3,7 @@ const app = require('../app');
 
 describe('Recently Viewed Products', () => {
     it('should return recently viewed products for a user', async () => {
-        const token = 'mockJWTToken'; // Replace with a valid token if needed
+        const token = 'mockJWTToken'; 
         const response = await request(app)
             .get('/api/v1/users/1/recentlyViewed')
             .set('Authorization', `Bearer ${token}`);
